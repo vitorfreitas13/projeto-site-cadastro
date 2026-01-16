@@ -1,48 +1,147 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+/* Reset básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+    font-family: 'Arial', sans-serif;
 }
 
+body {
+    background-color: #f5f7fa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    transition: all 0.3s ease; /* suaviza mudanças no body */
+}
 
+/* Cabeçalho */
 .cabecalho {
     text-align: center;
-    padding: 80px 0 40px 0;
-    
+    margin-bottom: 20px;
+    transition: all 0.3s ease; /* suaviza mudanças de fonte/margem */
 }
 
 .cabecalho h1 {
-    font-size: 36px;
+    color: #2c3e50;
+    font-size: 24px;
+    margin-bottom: 8px;
+    transition: all 0.3s ease;
 }
 
-
-.email-1, .senha-1 {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-    gap: 3px;
-    
+.cabecalho p {
+    font-size: 14px;
+    color: #7f8c8d;
+    margin-bottom: 8px;
+    font-style: italic;
+    transition: all 0.3s ease;
 }
 
-#email, #senha {
-    width: 500px;
-    border: 1px solid rgb(114, 113, 113);
-    border-radius: 20px;
-    outline: none;
-    padding: 5px;
-
-    
+.cabecalho h2 {
+    font-size: 16px;
+    color: #34495e;
+    transition: all 0.3s ease;
 }
 
+/* Container do formulário */
 .container {
-    display: flex;
-    justify-content: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+    transition: all 0.3s ease; /* suaviza mudanças de padding e largura */
 }
 
+/* Formulário */
+.formularios label {
+    display: block;
+    margin-bottom: 5px;
+    color: #34495e;
+    transition: all 0.3s ease;
+}
 
-#logar {
+.formularios input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    transition: all 0.3s ease; /* suaviza borda e tamanho */
+}
 
+.formularios input:focus {
+    outline: none;
+    border: 1px solid #3498db;
+    box-shadow: 0 0 5px rgba(52,152,219,0.5);
+    transition: all 0.3s ease;
+}
+
+.formularios button {
+    width: 100%;
+    padding: 12px;
+    background-color: #3498db;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.formularios button:hover {
+    background-color: #2980b9;
+}
+
+/* Linha horizontal */
+#linha {
+    width: 80%;
+    margin: 25px auto;
+    border: 0;
+    height: 1px;
+    background-color: #ccc;
+    transition: all 0.3s ease;
+}
+
+/* Rodapé */
+.rodape {
+    text-align: center;
+    margin-top: 15px;
+    color: #7f8c8d;
+    font-size: 12px;
+    transition: all 0.3s ease;
+}
+
+/* ======== Tablets e desktops ======== */
+@media (min-width: 600px) {
+    .cabecalho h1 {
+        font-size: 28px;
+    }
+    .cabecalho h2 {
+        font-size: 18px;
+    }
+    .cabecalho p {
+        font-size: 16px;
+    }
+    .container {
+        padding: 30px;
+    }
+}
+
+@media (min-width: 900px) {
+    .cabecalho h1 {
+        font-size: 32px;
+    }
+    .cabecalho h2 {
+        font-size: 20px;
+    }
+    .cabecalho p {
+        font-size: 18px;
+    }
 }
