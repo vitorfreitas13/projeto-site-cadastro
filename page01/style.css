@@ -9,21 +9,23 @@
 }
 
 body {
-    background-color: #f5f7fa;
+    background-color: #c5f1ff;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
     padding: 20px;
-    transition: all 0.3s ease; /* suaviza mudanças no body */
+    transition: all 0.3s ease;
+    /* suaviza mudanças no body */
 }
 
 /* Cabeçalho */
 .cabecalho {
     text-align: center;
     margin-bottom: 20px;
-    transition: all 0.3s ease; /* suaviza mudanças de fonte/margem */
+    transition: all 0.3s ease;
+    /* suaviza mudanças de fonte/margem */
 }
 
 .cabecalho h1 {
@@ -52,10 +54,11 @@ body {
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 400px;
-    transition: all 0.3s ease; /* suaviza mudanças de padding e largura */
+    transition: all 0.3s ease;
+    /* suaviza mudanças de padding e largura */
 }
 
 /* Formulário */
@@ -73,13 +76,15 @@ body {
     border-radius: 6px;
     border: 1px solid #ccc;
     font-size: 14px;
-    transition: all 0.3s ease; /* suaviza borda e tamanho */
+    transition: all 0.3s ease;
+    /* suaviza borda e tamanho */
+    border-radius: 30px;
 }
 
 .formularios input:focus {
     outline: none;
     border: 1px solid #3498db;
-    box-shadow: 0 0 5px rgba(52,152,219,0.5);
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
     transition: all 0.3s ease;
 }
 
@@ -98,6 +103,14 @@ body {
 .formularios button:hover {
     background-color: #2980b9;
 }
+
+.formularios button:active {
+    transform: scale(0.98);
+    /* botão “afunda” quando clicado */
+    background-color: #2471a3;
+    /* muda a cor um pouco */
+}
+
 
 /* Linha horizontal */
 #linha {
@@ -120,27 +133,40 @@ body {
 
 /* ======== Tablets e desktops ======== */
 @media (min-width: 600px) {
+    body {
+        background-color: #bfc6ca;
+    }
+
     .cabecalho h1 {
         font-size: 28px;
     }
+
     .cabecalho h2 {
         font-size: 18px;
     }
+
     .cabecalho p {
         font-size: 16px;
     }
+
     .container {
         padding: 30px;
     }
 }
 
 @media (min-width: 900px) {
+    body {
+        background-color: #f7f7f7;
+    }
+
     .cabecalho h1 {
         font-size: 32px;
     }
+
     .cabecalho h2 {
         font-size: 20px;
     }
+
     .cabecalho p {
         font-size: 18px;
     }

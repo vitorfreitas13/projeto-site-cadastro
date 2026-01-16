@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Produtos - ProductNexus</title>
+    <link rel="stylesheet" href="style-cadastro.css">
+</head>
+<body>
+
+    <div class="cabecalho">
+        <h1>Formulário de Cadastro de Produtos</h1>
+        <p>Registre seus produtos de forma rápida e organizada</p>
+    </div>
+
+    <div class="container">
+        <form class="formulario-produtos">
+
+            <label for="codigo">Código do Produto</label>
+            <input type="text" id="codigo" placeholder="Código do produto" required>
+
+            <label for="marca">Marca do Produto</label>
+            <input type="text" id="marca" placeholder="Marca do produto" required>
+
+            <label for="tipo">Tipo do Produto</label>
+            <input type="text" id="tipo" placeholder="Tipo do produto" required>
+
+            <label for="categoria">Categoria do Produto</label>
+            <input type="text" id="categoria" placeholder="Categoria do produto" required>
+
+            <label for="preco">Preço Unitário do Produto</label>
+            <input type="number" id="preco" placeholder="Preço unitário" step="0.01" required>
+
+            <label for="custo">Custo do Produto</label>
+            <input type="number" id="custo" placeholder="Custo do produto" step="0.01" required>
+
+            <label for="obs">Observações</label>
+            <textarea id="obs" placeholder="Observações sobre o produto"></textarea>
+
+            <div class="botoes">
+                <button type="submit">Enviar</button>
+                <button type="reset">Limpar</button>
+            </div>
+
+        </form>
+    </div>
+
+</body>
+</html>
