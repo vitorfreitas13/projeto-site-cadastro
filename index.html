@@ -4,43 +4,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Login - ProductNexus</title>
     <link rel="shortcut icon" href="../imagens/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="estilos/style.css">
 </head>
 
 <body>
+    <!-- ===== CABEÇALHO ===== -->
     <div class="cabecalho">
         <h1>ProductNexus</h1>
         <p>“Organize, registre e gerencie produtos com eficiência”</p>
         <h2>Faça seu Login para acessar</h2>
     </div>
 
+    <!-- ===== CONTAINER DO FORMULÁRIO ===== -->
     <div class="container">
-        <form class="formularios" action="../page02/cadastro.html" method="get">
+        <form class="formularios" action="../page02/cadastro.html" method="get" novalidate>
+            
+            <!-- Feedback de erro (escondido inicialmente) -->
+            <div class="feedback" id="erro-login" style="display:none;">
+                E-mail ou senha incorretos.
+            </div>
+
+            <!-- Input E-mail -->
             <div>
                 <label for="email"><strong>E-mail</strong></label>
                 <input type="email" id="email" name="email" required placeholder="Digite seu e-mail"
-                    autocomplete="email">
+                       autocomplete="email" aria-label="E-mail" aria-required="true">
             </div>
 
+            <!-- Input Senha -->
             <div>
                 <label for="senha"><strong>Senha</strong></label>
                 <input type="password" id="senha" name="senha" required placeholder="Digite sua senha"
-                    autocomplete="current-password">
+                       autocomplete="current-password" aria-label="Senha" aria-required="true">
             </div>
 
-            <button type="submit">Logar</button>
+            <!-- Botão Login -->
+            <button type="submit" id="btn-login" disabled>Logar</button>
         </form>
-
     </div>
 
     <hr id="linha">
 
+    <!-- ===== RODAPÉ ===== -->
     <footer class="rodape">
-        <p>&copy Desenvolvido Por Vitor Freitas </p>
+        <p>&copy; Desenvolvido Por Vitor Freitas</p>
     </footer>
 
+    <!-- ===== SCRIPT PARA HABILITAR BOTÃO ===== -->
+    <script>
+        const emailInput = document.getElementById('email');
+        const senhaInput = document.getElementById('senha');
+        const btnLogin = document.getElementById('btn-login');
+
+        function verificarCampos() {
+            if (emailInput.value.trim() !== "" && senhaInput.value.trim() !== "") {
+                btnLogin.disabled = false;
+            } else {
+                btnLogin.disabled = true;
+            }
+        }
+
+        emailInput.addEventListener('input', verificarCampos);
+        senhaInput.addEventListener('input', verificarCampos);
+    </script>
 </body>
 
 </html>

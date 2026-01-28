@@ -1,49 +1,86 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Produtos - ProductNexus</title>
     <link rel="stylesheet" href="style-cadastro.css">
 </head>
+
 <body>
 
+    <!-- ===== CABEÇALHO ===== -->
     <div class="cabecalho">
         <h1>Formulário de Cadastro de Produtos</h1>
         <p>Registre seus produtos de forma rápida e organizada</p>
     </div>
 
+    <!-- ===== CONTAINER FORMULÁRIO ===== -->
     <div class="container">
-        <form class="formulario-produtos">
-
+        <form class="formulario-produtos" novalidate action="processa_produto.php" method="post">
+            <!-- Código do produto -->
             <label for="codigo">Código do Produto</label>
-            <input type="text" id="codigo" placeholder="Código do produto" required>
+            <input type="text" id="codigo" name="codigo" placeholder="Código do produto" required>
 
+            <!-- Marca -->
             <label for="marca">Marca do Produto</label>
-            <input type="text" id="marca" placeholder="Marca do produto" required>
+            <input type="text" id="marca" name="marca" placeholder="Marca do produto" required>
 
+            <!-- Tipo -->
             <label for="tipo">Tipo do Produto</label>
-            <input type="text" id="tipo" placeholder="Tipo do produto" required>
+            <input type="text" id="tipo" name="tipo" placeholder="Tipo do produto" required>
 
+            <!-- Categoria -->
             <label for="categoria">Categoria do Produto</label>
-            <input type="text" id="categoria" placeholder="Categoria do produto" required>
+            <input type="text" id="categoria" name="categoria" placeholder="Categoria do produto" required>
 
+            <!-- Preço -->
             <label for="preco">Preço Unitário do Produto</label>
-            <input type="number" id="preco" placeholder="Preço unitário" step="0.01" required>
+            <input type="number" id="preco" name="preco" placeholder="Preço unitário" min="0" step="0.01" required>
 
+            <!-- Custo -->
             <label for="custo">Custo do Produto</label>
-            <input type="number" id="custo" placeholder="Custo do produto" step="0.01" required>
+            <input type="number" id="custo" name="custo" placeholder="Custo do produto" min="0" step="0.01" required>
 
+            <!-- Observações -->
             <label for="obs">Observações</label>
-            <textarea id="obs" placeholder="Observações sobre o produto"></textarea>
+            <textarea id="obs" name="obs" placeholder="Observações sobre o produto"></textarea>
 
             <div class="botoes">
-                <button type="submit">Enviar</button>
+                <button type="submit" id="btn-enviar" disabled>Enviar</button>
                 <button type="reset">Limpar</button>
             </div>
-
         </form>
+
     </div>
 
+    <!-- ===== SCRIPT PARA HABILITAR BOTÃO ===== -->
+    <script>
+        const formInputs = document.querySelectorAll('.formulario-produtos input[required]');
+        const btnEnviar = document.getElementById('btn-enviar');
+        const feedback = document.getElementById('erro-cadastro');
+
+        function verificarCampos() {
+            let todosPreenchidos = true;
+            formInputs.forEach(input => {
+                if (input.value.trim() === '') todosPreenchidos = false;
+            });
+            btnEnviar.disabled = !todosPreenchidos;
+        }
+
+        formInputs.forEach(input => input.addEventListener('input', verificarCampos));
+
+        // Exemplo de feedback visual ao tentar enviar vazio
+        document.querySelector('.formulario-produtos').addEventListener('submit', function (e) {
+            if (btnEnviar.disabled) {
+                e.preventDefault();
+                feedback.style.display = 'block';
+                setTimeout(() => feedback.style.display = 'none', 3000);
+            }
+        });
+    </script>
+
 </body>
+
 </html>
