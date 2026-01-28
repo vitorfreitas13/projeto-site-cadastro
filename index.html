@@ -17,19 +17,22 @@
     </div>
 
     <div class="container">
-        <form class="formularios" action="page02/cadastro.html" method="get">
-            <div class="email-1">
+        <form class="formularios" action="../page02/cadastro.html" method="get">
+            <div>
                 <label for="email"><strong>E-mail</strong></label>
-                <input type="email" id="email" required placeholder="Seu E-mail de login">
+                <input type="email" id="email" name="email" required placeholder="Digite seu e-mail"
+                    autocomplete="email">
             </div>
 
-            <div class="senha-1">
+            <div>
                 <label for="senha"><strong>Senha</strong></label>
-                <input type="password" id="senha" required placeholder="Senha">
+                <input type="password" id="senha" name="senha" required placeholder="Digite sua senha"
+                    autocomplete="current-password">
             </div>
 
-            <button>Logar</button>
+            <button type="submit">Logar</button>
         </form>
+
     </div>
 
     <hr id="linha">

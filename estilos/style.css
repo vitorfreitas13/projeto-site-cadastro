@@ -5,11 +5,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Montserrat', Arial, sans-serif;
 }
 
 body {
-    background-color: #c5f1ff;
+    background: linear-gradient(to bottom, #c5f1ff, #f7f7f7);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -53,10 +53,10 @@ body {
 .container {
     background-color: #fff;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08); /* suaviza profundidade */
     width: 100%;
-    max-width: 400px;
+    max-width: 500px;
     transition: all 0.3s ease;
     /* suaviza mudanças de padding e largura */
 }
@@ -69,11 +69,17 @@ body {
     transition: all 0.3s ease;
 }
 
+.formularios input::placeholder {
+    color: #95a5a6; /* cinza médio */
+    opacity: 1;
+    transition: color 0.3s ease;
+}
+
+
 .formularios input {
     width: 100%;
     padding: 12px;
     margin-bottom: 15px;
-    border-radius: 6px;
     border: 1px solid #ccc;
     font-size: 14px;
     transition: all 0.3s ease;
@@ -81,11 +87,25 @@ body {
     border-radius: 30px;
 }
 
+.formularios input:hover {
+    box-shadow: 0 0 3px rgba(52, 152, 219, 0.3);
+}
+
+.formularios button:disabled {
+    background-color: #7f8c8d;
+    cursor: not-allowed;
+}
+
+
 .formularios input:focus {
     outline: none;
     border: 1px solid #3498db;
     box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
     transition: all 0.3s ease;
+}
+
+.formularios input:focus::placeholder {
+    color: #b0bec5; /* placeholder suaviza quando ativo */
 }
 
 .formularios button {
@@ -95,13 +115,14 @@ body {
     color: #fff;
     font-size: 16px;
     border: none;
-    border-radius: 6px;
+    border-radius: 30px;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 .formularios button:hover {
     background-color: #2980b9;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 .formularios button:active {
@@ -109,6 +130,7 @@ body {
     /* botão “afunda” quando clicado */
     background-color: #2471a3;
     /* muda a cor um pouco */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 
@@ -133,8 +155,33 @@ body {
 
 /* ======== Tablets e desktops ======== */
 @media (min-width: 600px) {
-    body {
-        background-color: #bfc6ca;
+
+    .cabecalho {
+        margin-bottom: 50px;
+    }
+
+    .cabecalho h1 {
+        font-size: 32px;
+    }
+
+    .cabecalho h2 {
+        font-size: 20px;
+    }
+
+    .cabecalho p {
+        font-size: 18px;
+    }
+
+    .container {
+        max-width: 550px;
+        
+    }
+}
+
+@media (max-width: 599px) {
+
+    .cabecalho {
+        margin-bottom: 40px;
     }
 
     .cabecalho h1 {
@@ -154,20 +201,3 @@ body {
     }
 }
 
-@media (min-width: 900px) {
-    body {
-        background-color: #f7f7f7;
-    }
-
-    .cabecalho h1 {
-        font-size: 32px;
-    }
-
-    .cabecalho h2 {
-        font-size: 20px;
-    }
-
-    .cabecalho p {
-        font-size: 18px;
-    }
-}
